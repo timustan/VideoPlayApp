@@ -38,7 +38,7 @@ class SelectVideoController: UIViewController, UIImagePickerControllerDelegate ,
     }
     
     let imagePickerController = UIImagePickerController()
-    // ライブラリから動画を選択
+    // ライブラリから動画を選択する
     @IBAction func SelectVideoButton(_ sender :Any){
         imagePickerController.sourceType = .photoLibrary
         imagePickerController.delegate = self
