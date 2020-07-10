@@ -14,6 +14,8 @@
 		13B276FE243F9F680043AD3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B276FC243F9F680043AD3D /* LaunchScreen.storyboard */; };
 		13B27709243F9F680043AD3D /* VideoPlayAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27708243F9F680043AD3D /* VideoPlayAppTests.swift */; };
 		13B27714243F9F680043AD3D /* VideoPlayAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27713243F9F680043AD3D /* VideoPlayAppUITests.swift */; };
+		439AECEE24B88F0E00B4020D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AECED24B88F0E00B4020D /* CustomButton.swift */; };
+		439AECF024B8977700B4020D /* SelectVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AECEF24B8977700B4020D /* SelectVideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		13B2770F243F9F680043AD3D /* VideoPlayAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoPlayAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B27713243F9F680043AD3D /* VideoPlayAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayAppUITests.swift; sourceTree = "<group>"; };
 		13B27715243F9F680043AD3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		439AECED24B88F0E00B4020D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		439AECEF24B8977700B4020D /* SelectVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVideoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 			children = (
 				13B276F1243F9F660043AD3D /* AppDelegate.swift */,
 				13B276F3243F9F660043AD3D /* SceneDelegate.swift */,
+				439AECEC24B88EA000B4020D /* Utils */,
 				439AECEB24B88CDD00B4020D /* SupportFiles */,
 				439AECEA24B88CC800B4020D /* Resources */,
 				439AECE924B88CC200B4020D /* Model */,
@@ -138,6 +143,7 @@
 		439AECE824B88C9900B4020D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				439AECEF24B8977700B4020D /* SelectVideoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -163,6 +169,14 @@
 				13B276FF243F9F680043AD3D /* Info.plist */,
 			);
 			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		439AECEC24B88EA000B4020D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				439AECED24B88F0E00B4020D /* CustomButton.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,8 +310,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				439AECF024B8977700B4020D /* SelectVideoViewController.swift in Sources */,
 				13B276F2243F9F660043AD3D /* AppDelegate.swift in Sources */,
 				13B276F4243F9F660043AD3D /* SceneDelegate.swift in Sources */,
+				439AECEE24B88F0E00B4020D /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4TBCZRR653;
-				INFOPLIST_FILE = VideoPlayApp/Info.plist;
+				INFOPLIST_FILE = VideoPlayApp/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -490,7 +506,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4TBCZRR653;
-				INFOPLIST_FILE = VideoPlayApp/Info.plist;
+				INFOPLIST_FILE = VideoPlayApp/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,8 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="ipad10_2" orientation="portrait" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pj1-pJ-YsL">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Select Video View Controller-->
+        <scene sceneID="EwC-Ft-SHE">
+            <objects>
+                <viewController id="IXX-Gx-doo" userLabel="Select Video View Controller" customClass="SelectVideoViewController" customModule="VideoPlayApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RNe-ps-izm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6x-3u-xFt" userLabel="Button View">
+                                <rect key="frame" x="0.0" y="44" width="375" height="311.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRS-fw-cxF" customClass="CustomButton" customModule="VideoPlayApp" customModuleProvider="target">
+                                        <rect key="frame" x="56.5" y="71" width="262.5" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="meX-GL-7o5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="動画を選択する">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzR-qx-GVp" customClass="CustomButton" customModule="VideoPlayApp" customModuleProvider="target">
+                                        <rect key="frame" x="56.5" y="164.5" width="262.5" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="URLを入力する">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HdH-S8-l96" userLabel="borderline view">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="rtG-6L-bjA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="HdH-S8-l96" firstAttribute="top" secondItem="R6x-3u-xFt" secondAttribute="top" id="0FH-mp-e7J"/>
+                                    <constraint firstItem="jRS-fw-cxF" firstAttribute="width" secondItem="R6x-3u-xFt" secondAttribute="width" multiplier="0.7" id="4vi-hh-OF7"/>
+                                    <constraint firstItem="jRS-fw-cxF" firstAttribute="centerY" secondItem="R6x-3u-xFt" secondAttribute="centerY" multiplier="0.65" id="54X-5H-v9K"/>
+                                    <constraint firstItem="NzR-qx-GVp" firstAttribute="height" secondItem="jRS-fw-cxF" secondAttribute="height" id="D2G-N4-BMJ"/>
+                                    <constraint firstItem="HdH-S8-l96" firstAttribute="leading" secondItem="R6x-3u-xFt" secondAttribute="leading" id="Kry-GC-fFj"/>
+                                    <constraint firstItem="NzR-qx-GVp" firstAttribute="width" secondItem="jRS-fw-cxF" secondAttribute="width" id="O4Y-hJ-I1z"/>
+                                    <constraint firstItem="jRS-fw-cxF" firstAttribute="centerX" secondItem="R6x-3u-xFt" secondAttribute="centerX" id="PWC-4j-oPo"/>
+                                    <constraint firstItem="NzR-qx-GVp" firstAttribute="centerX" secondItem="jRS-fw-cxF" secondAttribute="centerX" id="Vz8-2F-TsR"/>
+                                    <constraint firstAttribute="trailing" secondItem="HdH-S8-l96" secondAttribute="trailing" id="j9F-e5-rIG"/>
+                                    <constraint firstItem="NzR-qx-GVp" firstAttribute="centerY" secondItem="R6x-3u-xFt" secondAttribute="centerY" multiplier="1.25" id="mNd-Gm-Bit"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="R6x-3u-xFt" firstAttribute="height" secondItem="xKV-gy-cQL" secondAttribute="height" multiplier="0.5" id="2xn-jf-3bw"/>
+                            <constraint firstItem="R6x-3u-xFt" firstAttribute="centerX" secondItem="RNe-ps-izm" secondAttribute="centerX" id="7fD-Ck-iGu"/>
+                            <constraint firstItem="R6x-3u-xFt" firstAttribute="top" secondItem="xKV-gy-cQL" secondAttribute="top" id="E4k-ZO-8dK"/>
+                            <constraint firstItem="R6x-3u-xFt" firstAttribute="width" secondItem="xKV-gy-cQL" secondAttribute="width" id="QNh-X8-KvT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xKV-gy-cQL"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="動画再生アプリ" id="ZFC-NU-EFL">
+                        <barButtonItem key="backBarButtonItem" title="　" id="Xgi-eg-P5R"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="inputURLButton" destination="NzR-qx-GVp" id="SOd-fB-Etf"/>
+                        <outlet property="selectVideoButton" destination="jRS-fw-cxF" id="xYQ-F8-d29"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FRc-1d-lWC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="335.19999999999999" y="11.244377811094454"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dxn-AH-DaN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pj1-pJ-YsL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F2h-uI-d9m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IXX-Gx-doo" kind="relationship" relationship="rootViewController" id="rRt-5b-iEW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eDk-lG-Rrq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-571.01449275362324" y="11.413043478260871"/>
+        </scene>
+    </scenes>
 </document>
