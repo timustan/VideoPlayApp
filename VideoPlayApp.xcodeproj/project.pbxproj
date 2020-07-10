@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		13B276F2243F9F660043AD3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B276F1243F9F660043AD3D /* AppDelegate.swift */; };
 		13B276F4243F9F660043AD3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B276F3243F9F660043AD3D /* SceneDelegate.swift */; };
-		13B276F6243F9F660043AD3D /* SelectVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B276F5243F9F660043AD3D /* SelectVideoController.swift */; };
 		13B276F9243F9F660043AD3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B276F7243F9F660043AD3D /* Main.storyboard */; };
 		13B276FB243F9F680043AD3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B276FA243F9F680043AD3D /* Assets.xcassets */; };
 		13B276FE243F9F680043AD3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B276FC243F9F680043AD3D /* LaunchScreen.storyboard */; };
@@ -38,7 +37,6 @@
 		13B276EE243F9F660043AD3D /* VideoPlayApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoPlayApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B276F1243F9F660043AD3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13B276F3243F9F660043AD3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		13B276F5243F9F660043AD3D /* SelectVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVideoController.swift; sourceTree = "<group>"; };
 		13B276F8243F9F660043AD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13B276FA243F9F680043AD3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13B276FD243F9F680043AD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,11 +99,11 @@
 			children = (
 				13B276F1243F9F660043AD3D /* AppDelegate.swift */,
 				13B276F3243F9F660043AD3D /* SceneDelegate.swift */,
-				13B276F5243F9F660043AD3D /* SelectVideoController.swift */,
-				13B276F7243F9F660043AD3D /* Main.storyboard */,
-				13B276FA243F9F680043AD3D /* Assets.xcassets */,
-				13B276FC243F9F680043AD3D /* LaunchScreen.storyboard */,
-				13B276FF243F9F680043AD3D /* Info.plist */,
+				439AECEB24B88CDD00B4020D /* SupportFiles */,
+				439AECEA24B88CC800B4020D /* Resources */,
+				439AECE924B88CC200B4020D /* Model */,
+				439AECE824B88C9900B4020D /* Controller */,
+				439AECE724B88C5B00B4020D /* View */,
 			);
 			path = VideoPlayApp;
 			sourceTree = "<group>";
@@ -126,6 +124,45 @@
 				13B27715243F9F680043AD3D /* Info.plist */,
 			);
 			path = VideoPlayAppUITests;
+			sourceTree = "<group>";
+		};
+		439AECE724B88C5B00B4020D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13B276FC243F9F680043AD3D /* LaunchScreen.storyboard */,
+				13B276F7243F9F660043AD3D /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		439AECE824B88C9900B4020D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		439AECE924B88CC200B4020D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		439AECEA24B88CC800B4020D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				13B276FA243F9F680043AD3D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		439AECEB24B88CDD00B4020D /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				13B276FF243F9F680043AD3D /* Info.plist */,
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +296,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13B276F6243F9F660043AD3D /* SelectVideoController.swift in Sources */,
 				13B276F2243F9F660043AD3D /* AppDelegate.swift in Sources */,
 				13B276F4243F9F660043AD3D /* SceneDelegate.swift in Sources */,
 			);
@@ -435,6 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4TBCZRR653;
 				INFOPLIST_FILE = VideoPlayApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +489,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4TBCZRR653;
 				INFOPLIST_FILE = VideoPlayApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -511,6 +549,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4TBCZRR653;
 				INFOPLIST_FILE = VideoPlayAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -530,6 +569,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4TBCZRR653;
 				INFOPLIST_FILE = VideoPlayAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

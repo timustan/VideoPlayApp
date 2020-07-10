@@ -46,6 +46,12 @@ class SelectVideoController: UIViewController, UIImagePickerControllerDelegate ,
         present(imagePickerController, animated: true,completion: nil)
     }
     
+    //  ライブラリから選択された動画のURLを取得する
+    func imagePickerController(_ picker: UIImagePickerController,
+    didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let selectVideoURL = info[.mediaURL]
+        print(selectVideoURL)
+    }
     
     // レイアウトを設定する
     func setButtons(){
