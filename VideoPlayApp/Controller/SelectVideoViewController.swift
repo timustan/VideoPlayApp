@@ -14,6 +14,8 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var inputBarView: UIView!
     // URL入力TextField
     @IBOutlet var inputURLTextField: UITextField!
+    // 動画再生画面遷移用identifier
+    let identifier = "PlayVideoViewController"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +29,13 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate {
     // 「URLを入力する」ボタン押下時
     @IBAction func clickedInputURLButton(_ sender: Any) {
         inputURLTextField.becomeFirstResponder()
+        inputBarView.isHidden = false
     }
     
     // 「決定」ボタン押下時
     @IBAction func clickedDecisionButton(_ sender: Any) {
+        // 動画再生画面に遷移
+        self.performSegue(withIdentifier: identifier, sender: nil)
     }
     
     // textField以外をタッチしたらキーボードを閉じる

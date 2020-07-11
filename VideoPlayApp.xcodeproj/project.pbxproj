@@ -16,6 +16,7 @@
 		13B27714243F9F680043AD3D /* VideoPlayAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27713243F9F680043AD3D /* VideoPlayAppUITests.swift */; };
 		439AECEE24B88F0E00B4020D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AECED24B88F0E00B4020D /* CustomButton.swift */; };
 		439AECF024B8977700B4020D /* SelectVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AECEF24B8977700B4020D /* SelectVideoViewController.swift */; };
+		439AECF224B99EE600B4020D /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AECF124B99EE600B4020D /* PlayVideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		13B27715243F9F680043AD3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		439AECED24B88F0E00B4020D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		439AECEF24B8977700B4020D /* SelectVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVideoViewController.swift; sourceTree = "<group>"; };
+		439AECF124B99EE600B4020D /* PlayVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				439AECEF24B8977700B4020D /* SelectVideoViewController.swift */,
+				439AECF124B99EE600B4020D /* PlayVideoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				439AECF024B8977700B4020D /* SelectVideoViewController.swift in Sources */,
 				13B276F2243F9F660043AD3D /* AppDelegate.swift in Sources */,
 				13B276F4243F9F660043AD3D /* SceneDelegate.swift in Sources */,
+				439AECF224B99EE600B4020D /* PlayVideoViewController.swift in Sources */,
 				439AECEE24B88F0E00B4020D /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

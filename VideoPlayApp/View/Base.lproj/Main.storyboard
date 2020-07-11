@@ -86,7 +86,7 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6G0-e0-FkK" userLabel="input Bar View">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="308.5" width="375" height="50"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAB-oP-suZ" userLabel="borderline View">
                                         <rect key="frame" x="0.0" y="49" width="375" height="1"/>
@@ -146,9 +146,9 @@
                             <constraint firstItem="R6x-3u-xFt" firstAttribute="height" secondItem="xKV-gy-cQL" secondAttribute="height" multiplier="0.5" id="2xn-jf-3bw"/>
                             <constraint firstItem="R6x-3u-xFt" firstAttribute="centerX" secondItem="RNe-ps-izm" secondAttribute="centerX" id="7fD-Ck-iGu"/>
                             <constraint firstItem="R6x-3u-xFt" firstAttribute="top" secondItem="xKV-gy-cQL" secondAttribute="top" id="E4k-ZO-8dK"/>
-                            <constraint firstItem="6G0-e0-FkK" firstAttribute="bottom" secondItem="xKV-gy-cQL" secondAttribute="bottom" id="Ghu-Xt-qbY"/>
                             <constraint firstItem="6G0-e0-FkK" firstAttribute="leading" secondItem="xKV-gy-cQL" secondAttribute="leading" id="OrN-xZ-UfE"/>
                             <constraint firstItem="R6x-3u-xFt" firstAttribute="width" secondItem="xKV-gy-cQL" secondAttribute="width" id="QNh-X8-KvT"/>
+                            <constraint firstItem="6G0-e0-FkK" firstAttribute="centerY" secondItem="RNe-ps-izm" secondAttribute="centerY" id="nSL-k2-vWs"/>
                             <constraint firstItem="6G0-e0-FkK" firstAttribute="trailing" secondItem="xKV-gy-cQL" secondAttribute="trailing" id="obA-qM-lgA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xKV-gy-cQL"/>
@@ -159,11 +159,66 @@
                     <connections>
                         <outlet property="inputBarView" destination="6G0-e0-FkK" id="zFp-h6-f7E"/>
                         <outlet property="inputURLTextField" destination="OI3-1h-wxj" id="nbR-tM-VR3"/>
+                        <segue destination="16w-6F-G8o" kind="show" identifier="PlayVideoViewController" id="7bm-HU-dXG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FRc-1d-lWC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="335.19999999999999" y="11.244377811094454"/>
+        </scene>
+        <!--Play Video View Controller-->
+        <scene sceneID="NFF-21-7lk">
+            <objects>
+                <viewController id="16w-6F-G8o" userLabel="Play Video View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fba-IX-J61">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEQ-HI-vIC" userLabel="control video View">
+                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sjp-m3-9b0">
+                                        <rect key="frame" x="13" y="5" width="349" height="11"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="KHs-oG-oyN"/>
+                                        </constraints>
+                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1va-2V-nzu">
+                                        <rect key="frame" x="176.5" y="33" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="20l-Bp-JUI"/>
+                                            <constraint firstAttribute="width" secondItem="1va-2V-nzu" secondAttribute="height" multiplier="1:1" id="FXI-HS-JBN"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="pause.fill" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="sjp-m3-9b0" firstAttribute="leading" secondItem="nEQ-HI-vIC" secondAttribute="leading" constant="15" id="G8B-j8-HuQ"/>
+                                    <constraint firstItem="1va-2V-nzu" firstAttribute="centerX" secondItem="nEQ-HI-vIC" secondAttribute="centerX" id="P6H-Rb-ky8"/>
+                                    <constraint firstItem="1va-2V-nzu" firstAttribute="centerY" secondItem="nEQ-HI-vIC" secondAttribute="centerY" multiplier="1.25" id="Zlw-9x-V7m"/>
+                                    <constraint firstAttribute="trailing" secondItem="sjp-m3-9b0" secondAttribute="trailing" constant="15" id="bIN-kI-PmJ"/>
+                                    <constraint firstItem="sjp-m3-9b0" firstAttribute="top" secondItem="nEQ-HI-vIC" secondAttribute="top" constant="5" id="diV-nw-XFg"/>
+                                    <constraint firstAttribute="height" constant="70" id="r2j-Xa-6Aa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nEQ-HI-vIC" firstAttribute="leading" secondItem="e0q-0K-PWi" secondAttribute="leading" id="0qs-F0-pON"/>
+                            <constraint firstItem="nEQ-HI-vIC" firstAttribute="bottom" secondItem="e0q-0K-PWi" secondAttribute="bottom" id="OJk-H7-7Fb"/>
+                            <constraint firstItem="nEQ-HI-vIC" firstAttribute="trailing" secondItem="e0q-0K-PWi" secondAttribute="trailing" id="PnR-od-Vzd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e0q-0K-PWi"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="title" id="GzM-qx-9IH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LzU-Dz-YaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1165.5999999999999" y="9.4452773613193415"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dxn-AH-DaN">
@@ -184,4 +239,7 @@
             <point key="canvasLocation" x="-571.01449275362324" y="11.413043478260871"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pause.fill" catalog="system" width="116" height="128"/>
+    </resources>
 </document>
