@@ -88,6 +88,15 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate, UIImageP
         present(imagePickerController, animated: true)
     }
     
+    // 動画選択後に呼ばれる
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        dismiss(animated: true)
+    }
+    // 動画選択キャンセル時に呼ばれる
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
+    }
+    
     // アラートを表示する
     func showAlert(title: String, message: String) {
         let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
