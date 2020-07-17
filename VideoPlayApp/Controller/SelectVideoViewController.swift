@@ -23,6 +23,8 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate, UIImageP
     let imagePickerController = UIImagePickerController()
     // log
     let log = OSLog(subsystem: "com.timustan.VideoPlayApp", category: "SelectVideoView")
+    // URL
+    var videoURL = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,13 +45,13 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate, UIImageP
         
     }
     // 「URLを入力する」ボタン押下時
-    @IBAction func clickedInputURLButton(_ sender: Any) {
+    @IBAction func tapInputURLButton(_ sender: Any) {
         inputURLTextField.becomeFirstResponder()
         inputBarView.isHidden = false
     }
     
     // 「決定」ボタン押下時
-    @IBAction func clickedDecisionButton(_ sender: Any) {
+    @IBAction func tapDecisionButton(_ sender: Any) {
         // 動画再生画面に遷移
         self.performSegue(withIdentifier: identifier, sender: nil)
     }
@@ -90,6 +92,8 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     // 動画選択後に呼ばれる
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let videoInfo = info[.mediaURL]
+        print(videoInfo ?? "")
         dismiss(animated: true)
     }
     // 動画選択キャンセル時に呼ばれる

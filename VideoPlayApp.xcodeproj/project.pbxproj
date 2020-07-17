@@ -14,6 +14,7 @@
 		13B276FE243F9F680043AD3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B276FC243F9F680043AD3D /* LaunchScreen.storyboard */; };
 		13B27709243F9F680043AD3D /* VideoPlayAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27708243F9F680043AD3D /* VideoPlayAppTests.swift */; };
 		13B27714243F9F680043AD3D /* VideoPlayAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27713243F9F680043AD3D /* VideoPlayAppUITests.swift */; };
+		435586CA24C1FD3000EDE692 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435586C924C1FD3000EDE692 /* PlayerView.swift */; };
 		439AECEE24B88F0E00B4020D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AECED24B88F0E00B4020D /* CustomButton.swift */; };
 		439AECF024B8977700B4020D /* SelectVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AECEF24B8977700B4020D /* SelectVideoViewController.swift */; };
 		439AECF224B99EE600B4020D /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AECF124B99EE600B4020D /* PlayVideoViewController.swift */; };
@@ -51,6 +52,7 @@
 		13B2770F243F9F680043AD3D /* VideoPlayAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoPlayAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B27713243F9F680043AD3D /* VideoPlayAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayAppUITests.swift; sourceTree = "<group>"; };
 		13B27715243F9F680043AD3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		435586C924C1FD3000EDE692 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		439AECED24B88F0E00B4020D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		439AECEF24B8977700B4020D /* SelectVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVideoViewController.swift; sourceTree = "<group>"; };
 		439AECF124B99EE600B4020D /* PlayVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			children = (
 				439AECED24B88F0E00B4020D /* CustomButton.swift */,
 				439AECF324B9B32C00B4020D /* Const.swift */,
+				435586C924C1FD3000EDE692 /* PlayerView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			files = (
 				439AECF024B8977700B4020D /* SelectVideoViewController.swift in Sources */,
 				13B276F2243F9F660043AD3D /* AppDelegate.swift in Sources */,
+				435586CA24C1FD3000EDE692 /* PlayerView.swift in Sources */,
 				13B276F4243F9F660043AD3D /* SceneDelegate.swift in Sources */,
 				439AECF224B99EE600B4020D /* PlayVideoViewController.swift in Sources */,
 				439AECEE24B88F0E00B4020D /* CustomButton.swift in Sources */,

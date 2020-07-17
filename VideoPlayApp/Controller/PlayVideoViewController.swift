@@ -10,9 +10,14 @@ import UIKit
 
 class PlayVideoViewController: UIViewController {
 
+    @IBOutlet var playerView: PlayerView!
+    @IBOutlet var playPauseButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-
+    @IBAction func tapPlayPauseButton(_ sender: Any) {
+    }
+    
 }
