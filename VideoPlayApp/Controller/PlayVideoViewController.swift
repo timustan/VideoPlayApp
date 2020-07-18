@@ -22,9 +22,43 @@ class PlayVideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(videoURL ?? "うまくいってないよ〜")
-
+        do {
+            // Audiosessionの設定
+            try setAudiosession()
+        } catch {
+            print(error)
+            return
+        }
+        // playerのセットアップ
+        setupPlayer()
     }
     @IBAction func tapPlayPauseButton(_ sender: Any) {
+        player.play()
+        
     }
     
+    // Audio sessionの設定
+    func setAudiosession() throws {
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(.playback, mode: .moviePlayback)
+            
+        } catch {
+            throw error
+        }
+        do {
+            try audioSession.setActive(true)
+            print("Audio session set active")
+        } catch {
+            print("Audio session unset active")
+            throw error
+        }
+    }
+    
+    // playerのセットアップ
+    func setupPlayer () {
+        let playItem = AVPlayerItem(url: videoURL!)
+        player = AVPlayer(playerItem: playItem)
+        playerView.player = player
+    }
 }
