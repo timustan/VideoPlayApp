@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import AVFoundation
+import MediaPlayer
+import AVKit
 
 class PlayVideoViewController: UIViewController {
 
     @IBOutlet var playerView: PlayerView!
     @IBOutlet var playPauseButton: UIButton!
     
+    var player = AVPlayer()
+    var videoURL: URL?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(videoURL ?? "うまくいってないよ〜")
 
     }
     @IBAction func tapPlayPauseButton(_ sender: Any) {

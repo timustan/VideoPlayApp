@@ -24,13 +24,19 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate, UIImageP
     // log
     let log = OSLog(subsystem: "com.timustan.VideoPlayApp", category: "SelectVideoView")
     // URL
-    var videoURL = ""
+    var videoURL: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // 権限を求める
         askForAuthority()
         inputURLTextField.delegate = self
+    }
+    
+    //値の受け渡し
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let playVideoVC = segue.destination as? PlayVideoViewController
+        playVideoVC?.videoURL = self.videoURL
     }
     
     // 「動画を選択する」ボタン押下時
@@ -92,8 +98,10 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     // 動画選択後に呼ばれる
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let videoInfo = info[.mediaURL]
-        print(videoInfo ?? "")
+        let videoURL = info[.mediaURL]
+        self.videoURL = videoURL as? URL
+        // 動画再生画面に遷移
+        self.performSegue(withIdentifier: identifier, sender: nil)
         dismiss(animated: true)
     }
     // 動画選択キャンセル時に呼ばれる
