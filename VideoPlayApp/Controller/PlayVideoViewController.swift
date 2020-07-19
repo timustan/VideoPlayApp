@@ -15,6 +15,7 @@ class PlayVideoViewController: UIViewController {
 
     @IBOutlet var playerView: PlayerView!
     @IBOutlet var playPauseButton: UIButton!
+    @IBOutlet weak var videoTimeSlider: UISlider!
     
     var player = AVPlayer()
     var videoURL: URL?
@@ -32,6 +33,8 @@ class PlayVideoViewController: UIViewController {
         // playerのセットアップ
         setupPlayer()
     }
+    
+    // 再生/停止ボタン押下時
     @IBAction func tapPlayPauseButton(_ sender: Any) {
         player.play()
         

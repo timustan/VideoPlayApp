@@ -180,9 +180,12 @@
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sjp-m3-9b0">
                                         <rect key="frame" x="13" y="5" width="349" height="11"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="KHs-oG-oyN"/>
                                         </constraints>
+                                        <color key="thumbTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1va-2V-nzu">
                                         <rect key="frame" x="176.5" y="33" width="22" height="22"/>
@@ -240,6 +243,7 @@
                     <connections>
                         <outlet property="playPauseButton" destination="1va-2V-nzu" id="g0l-9w-ZUM"/>
                         <outlet property="playerView" destination="VHX-1x-z5R" id="RW9-Oq-nTM"/>
+                        <outlet property="videoTimeSlider" destination="sjp-m3-9b0" id="OAg-mh-tzF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LzU-Dz-YaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

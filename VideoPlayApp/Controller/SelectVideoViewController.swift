@@ -58,6 +58,7 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     // 「決定」ボタン押下時
     @IBAction func tapDecisionButton(_ sender: Any) {
+        self.videoURL = URL(string: self.inputURLTextField.text!)
         // 動画再生画面に遷移
         self.performSegue(withIdentifier: identifier, sender: nil)
     }
