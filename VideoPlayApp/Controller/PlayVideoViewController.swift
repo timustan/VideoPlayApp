@@ -18,11 +18,16 @@ class PlayVideoViewController: UIViewController {
     @IBOutlet weak var videoTimeSlider: UISlider!
     
     var player = AVPlayer()
-    var videoURL: URL?
+    var URLstr = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(videoURL ?? "うまくいってないよ〜")
+        // UserDefaultからURLを取得
+        let URLstr: String = UserDefaults.standard.string(forKey: "URL") ?? ""
+        print(URLstr)
+        // URL複合化
+        self.URLstr = Cryption.ddd(base64: URLstr)
+        print(self.URLstr)
         do {
             // Audiosessionの設定
             try setAudiosession()
@@ -60,7 +65,7 @@ class PlayVideoViewController: UIViewController {
     
     // playerのセットアップ
     func setupPlayer () {
-        let playItem = AVPlayerItem(url: videoURL!)
+        let playItem = AVPlayerItem(url: URL(string: self.URLstr)!)
         player = AVPlayer(playerItem: playItem)
         playerView.player = player
     }

@@ -9,6 +9,7 @@
 import UIKit
 import Photos
 import CoreServices
+import CryptoSwift
 import os.log
 
 class SelectVideoViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
@@ -31,12 +32,6 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate, UIImageP
         // 権限を求める
         askForAuthority()
         inputURLTextField.delegate = self
-    }
-    
-    //値の受け渡し
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let playVideoVC = segue.destination as? PlayVideoViewController
-        playVideoVC?.videoURL = self.videoURL
     }
     
     // 「動画を選択する」ボタン押下時
@@ -99,12 +94,19 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     // 動画選択後に呼ばれる
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let videoURL = info[.mediaURL]
-        self.videoURL = videoURL as? URL
+        print(info[.mediaURL] ?? "")
+        // URL -> String
+        let URLstr = (info[.mediaURL] as! URL).absoluteString
+        print(URLstr)
+        // 取得したURLを暗号化
+        let videoURL = Cryption.eee(text: URLstr)
+        // UserDefaultにURLを保存
+        UserDefaults.standard.set(videoURL, forKey: "URL")
         // 動画再生画面に遷移
         self.performSegue(withIdentifier: identifier, sender: nil)
         dismiss(animated: true)
     }
+    
     // 動画選択キャンセル時に呼ばれる
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
