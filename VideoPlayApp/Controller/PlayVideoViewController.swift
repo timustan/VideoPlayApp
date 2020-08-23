@@ -15,7 +15,12 @@ class PlayVideoViewController: UIViewController {
 
     @IBOutlet var playerView: PlayerView!
     @IBOutlet var playPauseButton: UIButton!
-    @IBOutlet weak var videoTimeSlider: UISlider!
+    @IBOutlet weak var videoTimeSlider: UISlider! {
+        didSet {
+            // sliderのレイアウト設定
+            videoTimeSlider.setThumbImage(UIImage.circle(diameter: 15, color: .lightGray), for: .normal)
+        }
+    }
     
     var player = AVPlayer()
     var URLstr = ""
@@ -24,7 +29,6 @@ class PlayVideoViewController: UIViewController {
         super.viewDidLoad()
         // UserDefaultからURLを取得
         let URLstr: String = UserDefaults.standard.string(forKey: "URL") ?? ""
-        print(URLstr)
         // URL複合化
         self.URLstr = Cryption.ddd(base64: URLstr)
         print(self.URLstr)

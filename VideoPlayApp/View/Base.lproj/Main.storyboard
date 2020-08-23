@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pj1-pJ-YsL">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -13,14 +13,14 @@
             <objects>
                 <viewController id="IXX-Gx-doo" userLabel="Select Video View Controller" customClass="SelectVideoViewController" customModule="VideoPlayApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RNe-ps-izm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6x-3u-xFt" userLabel="Button View">
-                                <rect key="frame" x="0.0" y="44" width="375" height="311.5"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="345"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRS-fw-cxF" customClass="CustomButton" customModule="VideoPlayApp" customModuleProvider="target">
-                                        <rect key="frame" x="56.5" y="71" width="262.5" height="60"/>
+                                        <rect key="frame" x="56.333333333333343" y="82" width="262.33333333333326" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="meX-GL-7o5"/>
                                         </constraints>
@@ -44,7 +44,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzR-qx-GVp" customClass="CustomButton" customModule="VideoPlayApp" customModuleProvider="target">
-                                        <rect key="frame" x="56.5" y="164.5" width="262.5" height="60"/>
+                                        <rect key="frame" x="56.333333333333343" y="185.66666666666669" width="262.33333333333326" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="URLを入力する">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -87,7 +87,7 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6G0-e0-FkK" userLabel="input Bar View">
-                                <rect key="frame" x="0.0" y="308.5" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="381" width="375" height="50"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAB-oP-suZ" userLabel="borderline View">
                                         <rect key="frame" x="0.0" y="49" width="375" height="1"/>
@@ -172,11 +172,11 @@
             <objects>
                 <viewController id="16w-6F-G8o" userLabel="Play Video View Controller" customClass="PlayVideoViewController" customModule="VideoPlayApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fba-IX-J61">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEQ-HI-vIC" userLabel="control video View">
-                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="708" width="375" height="70"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sjp-m3-9b0">
                                         <rect key="frame" x="13" y="5" width="349" height="11"/>
@@ -188,9 +188,9 @@
                                         <color key="thumbTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1va-2V-nzu">
-                                        <rect key="frame" x="176.5" y="33" width="22" height="22"/>
+                                        <rect key="frame" x="172.66666666666666" y="28.666666666666629" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="22" id="20l-Bp-JUI"/>
+                                            <constraint firstAttribute="height" constant="30" id="20l-Bp-JUI"/>
                                             <constraint firstAttribute="width" secondItem="1va-2V-nzu" secondAttribute="height" multiplier="1:1" id="FXI-HS-JBN"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -213,11 +213,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHX-1x-z5R" userLabel="player View" customClass="PlayerView" customModule="VideoPlayApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="46" width="375" height="534"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="601"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDv-Ge-yVn" userLabel="borderline view">
-                                <rect key="frame" x="0.0" y="44" width="375" height="2"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="2"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="ny4-SK-UNm"/>
@@ -256,7 +256,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pj1-pJ-YsL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F2h-uI-d9m">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

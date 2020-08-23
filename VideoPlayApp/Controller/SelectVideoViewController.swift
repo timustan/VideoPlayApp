@@ -97,7 +97,6 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate, UIImageP
         print(info[.mediaURL] ?? "")
         // URL -> String
         let URLstr = (info[.mediaURL] as! URL).absoluteString
-        print(URLstr)
         // 取得したURLを暗号化
         let videoURL = Cryption.eee(text: URLstr)
         // UserDefaultにURLを保存
