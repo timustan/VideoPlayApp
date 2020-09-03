@@ -47,8 +47,11 @@ class PlayVideoViewController: UIViewController {
     
     // 再生/停止ボタン押下時
     @IBAction func tapPlayPauseButton(_ sender: Any) {
-        player.play()
-        
+        if player.timeControlStatus == .paused {
+            player.play()
+        } else {
+            player.pause()
+        }
     }
     
     // Audio sessionの設定
