@@ -49,8 +49,10 @@ class PlayVideoViewController: UIViewController {
     @IBAction func tapPlayPauseButton(_ sender: Any) {
         if player.timeControlStatus == .paused {
             player.play()
+            playPauseButton.setImage(UIImage(systemName:"pause.fill"), for: .normal)
         } else {
             player.pause()
+            playPauseButton.setImage(UIImage(systemName:"play.fill"), for: .normal)
         }
     }
     
