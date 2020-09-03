@@ -86,7 +86,7 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6G0-e0-FkK" userLabel="input Bar View">
-                                <rect key="frame" x="0.0" y="381" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="528" width="375" height="50"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAB-oP-suZ" userLabel="borderline View">
                                         <rect key="frame" x="0.0" y="49" width="375" height="1"/>
@@ -145,10 +145,10 @@
                         <constraints>
                             <constraint firstItem="R6x-3u-xFt" firstAttribute="height" secondItem="xKV-gy-cQL" secondAttribute="height" multiplier="0.5" id="2xn-jf-3bw"/>
                             <constraint firstItem="R6x-3u-xFt" firstAttribute="centerX" secondItem="RNe-ps-izm" secondAttribute="centerX" id="7fD-Ck-iGu"/>
+                            <constraint firstItem="xKV-gy-cQL" firstAttribute="bottom" secondItem="6G0-e0-FkK" secondAttribute="bottom" constant="200" id="A00-kP-AMd"/>
                             <constraint firstItem="R6x-3u-xFt" firstAttribute="top" secondItem="xKV-gy-cQL" secondAttribute="top" id="E4k-ZO-8dK"/>
                             <constraint firstItem="6G0-e0-FkK" firstAttribute="leading" secondItem="xKV-gy-cQL" secondAttribute="leading" id="OrN-xZ-UfE"/>
                             <constraint firstItem="R6x-3u-xFt" firstAttribute="width" secondItem="xKV-gy-cQL" secondAttribute="width" id="QNh-X8-KvT"/>
-                            <constraint firstItem="6G0-e0-FkK" firstAttribute="centerY" secondItem="RNe-ps-izm" secondAttribute="centerY" id="nSL-k2-vWs"/>
                             <constraint firstItem="6G0-e0-FkK" firstAttribute="trailing" secondItem="xKV-gy-cQL" secondAttribute="trailing" id="obA-qM-lgA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xKV-gy-cQL"/>
@@ -158,6 +158,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="inputBarView" destination="6G0-e0-FkK" id="zFp-h6-f7E"/>
+                        <outlet property="inputBarViewYCoordinate" destination="A00-kP-AMd" id="dEO-0j-wc1"/>
                         <outlet property="inputURLTextField" destination="OI3-1h-wxj" id="nbR-tM-VR3"/>
                         <segue destination="16w-6F-G8o" kind="show" identifier="PlayVideoViewController" id="7bm-HU-dXG"/>
                     </connections>

@@ -18,6 +18,9 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate, UIImageP
     @IBOutlet var inputBarView: UIView!
     // URL入力TextField
     @IBOutlet var inputURLTextField: UITextField!
+    
+    @IBOutlet var inputBarViewYCoordinate: NSLayoutConstraint!
+    
     // 動画再生画面遷移用identifier
     let identifier = "PlayVideoViewController"
     // UIImagePickerController
@@ -32,6 +35,19 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate, UIImageP
         // 権限を求める
         askForAuthority()
         inputURLTextField.delegate = self
+        //　キーボードの開閉を検知する
+        NotificationCenter.default.addObserver(
+          self,
+          selector:#selector(keyboardWillShow(_:)),
+          name: UIResponder.keyboardWillShowNotification,
+          object: nil
+        )
+        NotificationCenter.default.addObserver(
+          self,
+          selector: #selector(keyboardWillHide(_:)),
+          name: UIResponder.keyboardWillHideNotification,
+          object: nil
+        )
     }
     
     // 「動画を選択する」ボタン押下時
@@ -48,7 +64,6 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate, UIImageP
     // 「URLを入力する」ボタン押下時
     @IBAction func tapInputURLButton(_ sender: Any) {
         inputURLTextField.becomeFirstResponder()
-        inputBarView.isHidden = false
     }
     
     // 「決定」ボタン押下時
@@ -109,6 +124,31 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate, UIImageP
     // 動画選択キャンセル時に呼ばれる
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
+    }
+    
+    // キーボードが開いたら、高さを取得しテキストフィールドを表示する
+    @objc func keyboardWillShow(_ notification: Notification) {
+      guard let userInfo = notification.userInfo as? [String: Any] else {
+        return
+      }
+      guard let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {
+        return
+      }
+      //キーボードの高さを取得
+      guard let rect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+        return
+      }
+      UIView.animate(withDuration: duration , delay: 0.5, animations: {
+        // キーボードの上にTextFieledが来るようにする
+        self.inputBarViewYCoordinate.constant = rect.height
+        self.inputBarView.isHidden = false
+      })
+    }
+    
+    // キーボードが閉じたらテキストフィールドを隠す
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        //キーボードが閉じたときの処理
+        inputBarView.isHidden = true
     }
     
     // アラートを表示する
