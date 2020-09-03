@@ -82,6 +82,9 @@ class PlayVideoViewController: UIViewController {
         player = AVPlayer(playerItem: playItem)
         playerView.player = player
         addPeriodicTimeObserver()
+        
+        // 動画再生の終了を検知するように設定
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: playItem)
     }
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
@@ -125,5 +128,10 @@ class PlayVideoViewController: UIViewController {
             // playerをもとのrateに戻す(0より大きいならrateの速度で再生される)
             self.player.rate = rate
         })
+    }
+    
+    @objc func playerDidFinishPlaying() {
+    print("MovieFinish!!")
+        player.seek(to: CMTimeMakeWithSeconds(0, preferredTimescale: 1))
     }
 }
