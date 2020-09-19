@@ -1,8 +1,8 @@
 //
-//  PlayVideoViewController.swift
+//  PlayVideoFullScreenViewController.swift
 //  VideoPlayApp
 //
-//  Created by teramoto on 2020/07/11.
+//  Created by teramoto on 2020/09/03.
 //  Copyright © 2020 natsumi. All rights reserved.
 //
 
@@ -11,11 +11,11 @@ import AVFoundation
 import MediaPlayer
 import AVKit
 
-class PlayVideoViewController: UIViewController {
-
+class PlayVideoFullScreenViewController: UIViewController  {
+    
     @IBOutlet var playerView: PlayerView!
     @IBOutlet var playPauseButton: UIButton!
-    @IBOutlet weak var videoTimeSlider: UISlider! {
+    @IBOutlet var videoTimeSlider: UISlider! {
         didSet {
             // sliderのレイアウト設定
             videoTimeSlider.setThumbImage(UIImage.circle(diameter: 15, color: .lightGray), for: .normal)
@@ -28,11 +28,18 @@ class PlayVideoViewController: UIViewController {
     var time: CMTime!
     var isNowPlaying: Bool!
     var timeObserverToken: Any?
-    
-    let identifier = "PlayVideoFullScreenViewController"
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        
+        if !isNowPlaying {
+            playPauseButton.setImage(UIImage(systemName:"pause.fill"), for: .normal)
+        } else {
+            playPauseButton.setImage(UIImage(systemName:"play.fill"), for: .normal)
+        }
+        
         // UserDefaultからURLを取得
         let URLstr: String = UserDefaults.standard.string(forKey: "URL") ?? ""
         // URL複合化
@@ -45,25 +52,13 @@ class PlayVideoViewController: UIViewController {
             print(error)
             return
         }
+        
         // playerのセットアップ
         setupPlayer()
     }
     
-    //値の受け渡し
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let playVideoFullScreenVc = segue.destination as? PlayVideoFullScreenViewController
-        // 現時点の再生時間
-        playVideoFullScreenVc?.time = time
-        // 再生中/停止中
-        playVideoFullScreenVc?.isNowPlaying = isNowPlaying
-        
-        playVideoFullScreenVc?.setVideoPlayer(player)
-    }
-    
-    // 再生/停止ボタン押下時
     @IBAction func tapPlayPauseButton(_ sender: Any) {
-        if player.timeControlStatus == .paused {
+        if !isPlaying() {
             player.play()
             playPauseButton.setImage(UIImage(systemName:"pause.fill"), for: .normal)
         } else {
@@ -72,22 +67,16 @@ class PlayVideoViewController: UIViewController {
         }
     }
     
-    @IBAction func tapFullScreenButton(_ sender: Any) {
-        self.time = self.player.currentItem?.currentTime() ?? CMTime.zero
-        self.isNowPlaying = self.isPlaying()
-        
-        self.playerView.player = nil
-        
-        // 全画面再生画面に遷移
-        self.performSegue(withIdentifier: identifier, sender: nil)
-    }
-    
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         let seconds = Double(sender.value) * itemDuration
         let timeScale = CMTimeScale(NSEC_PER_SEC)
         let time = CMTime(seconds: seconds, preferredTimescale: timeScale)
         
         changePosition(time: time)
+    }
+    
+    @IBAction func tapExitFullScreenButton(_ sender: Any) {
+        
     }
     
     // Audio sessionの設定
@@ -108,15 +97,20 @@ class PlayVideoViewController: UIViewController {
         }
     }
     
+    func setVideoPlayer(_ player: AVPlayer) {
+        self.player = player
+    }
+    
     // playerのセットアップ
     func setupPlayer () {
+        
         // 動画ファイルの長さを示す秒数を設定する
         let asset = AVAsset(url: URL(string: self.URLstr)!)
         itemDuration = CMTimeGetSeconds(asset.duration)
         
         let playItem = AVPlayerItem(url: URL(string: self.URLstr)!)
-        player = AVPlayer(playerItem: playItem)
         playerView.player = player
+        player.seek(to: self.time)
         addPeriodicTimeObserver()
         
         // 動画再生の終了を検知するように設定
@@ -171,4 +165,5 @@ class PlayVideoViewController: UIViewController {
     print("MovieFinish!!")
         player.seek(to: CMTimeMakeWithSeconds(0, preferredTimescale: 1))
     }
+    
 }

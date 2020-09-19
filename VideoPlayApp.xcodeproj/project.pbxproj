@@ -19,8 +19,10 @@
 		439AECF024B8977700B4020D /* SelectVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AECEF24B8977700B4020D /* SelectVideoViewController.swift */; };
 		439AECF224B99EE600B4020D /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AECF124B99EE600B4020D /* PlayVideoViewController.swift */; };
 		439AECF424B9B32C00B4020D /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AECF324B9B32C00B4020D /* Const.swift */; };
+		43E0B0ED2500D30600305C81 /* PlayVideoFullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E0B0EC2500D30600305C81 /* PlayVideoFullScreenViewController.swift */; };
 		43E1181F24CAC6100019F70A /* Cryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E1181E24CAC6100019F70A /* Cryption.swift */; };
 		43E1182124CACBF10019F70A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E1182024CACBF10019F70A /* Extensions.swift */; };
+		43EDFD00250EF58E0006B4B6 /* DoublePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EDFCFF250EF58E0006B4B6 /* DoublePlayerViewController.swift */; };
 		D015A2501D83BEDCD5E8F4B7 /* Pods_VideoPlayApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F62BA3FD202B4CFB07BC7BE /* Pods_VideoPlayApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,8 +62,10 @@
 		439AECEF24B8977700B4020D /* SelectVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVideoViewController.swift; sourceTree = "<group>"; };
 		439AECF124B99EE600B4020D /* PlayVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
 		439AECF324B9B32C00B4020D /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		43E0B0EC2500D30600305C81 /* PlayVideoFullScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVideoFullScreenViewController.swift; sourceTree = "<group>"; };
 		43E1181E24CAC6100019F70A /* Cryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryption.swift; sourceTree = "<group>"; };
 		43E1182024CACBF10019F70A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		43EDFCFF250EF58E0006B4B6 /* DoublePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublePlayerViewController.swift; sourceTree = "<group>"; };
 		4EF7960D0FC056851FCB0D33 /* Pods-VideoPlayApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoPlayApp.debug.xcconfig"; path = "Target Support Files/Pods-VideoPlayApp/Pods-VideoPlayApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8F62BA3FD202B4CFB07BC7BE /* Pods_VideoPlayApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoPlayApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C632A4FF92DE72C3C71E91 /* Pods-VideoPlayApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoPlayApp.release.xcconfig"; path = "Target Support Files/Pods-VideoPlayApp/Pods-VideoPlayApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 			children = (
 				439AECEF24B8977700B4020D /* SelectVideoViewController.swift */,
 				439AECF124B99EE600B4020D /* PlayVideoViewController.swift */,
+				43E0B0EC2500D30600305C81 /* PlayVideoFullScreenViewController.swift */,
+				43EDFCFF250EF58E0006B4B6 /* DoublePlayerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -393,9 +399,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43EDFD00250EF58E0006B4B6 /* DoublePlayerViewController.swift in Sources */,
 				439AECF024B8977700B4020D /* SelectVideoViewController.swift in Sources */,
 				43E1182124CACBF10019F70A /* Extensions.swift in Sources */,
 				43E1181F24CAC6100019F70A /* Cryption.swift in Sources */,
+				43E0B0ED2500D30600305C81 /* PlayVideoFullScreenViewController.swift in Sources */,
 				13B276F2243F9F660043AD3D /* AppDelegate.swift in Sources */,
 				435586CA24C1FD3000EDE692 /* PlayerView.swift in Sources */,
 				13B276F4243F9F660043AD3D /* SceneDelegate.swift in Sources */,

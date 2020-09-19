@@ -179,7 +179,7 @@
                                 <rect key="frame" x="0.0" y="708" width="375" height="70"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjp-m3-9b0">
-                                        <rect key="frame" x="13" y="5" width="349" height="11"/>
+                                        <rect key="frame" x="13" y="5" width="304" height="11"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -205,27 +205,27 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubd-27-srx" userLabel="Full Screen Button">
-                                        <rect key="frame" x="325" y="36.333333333333371" width="15" height="15"/>
+                                        <rect key="frame" x="336" y="2.6666666666666288" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ubd-27-srx" secondAttribute="height" multiplier="1:1" id="YjU-ap-5xB"/>
                                             <constraint firstAttribute="height" constant="15" id="ggg-6K-CUp"/>
                                         </constraints>
                                         <state key="normal" image="icon_full_screen"/>
                                         <connections>
-                                            <segue destination="4VC-ZV-Qet" kind="show" id="o1J-hA-kJX"/>
+                                            <action selector="tapFullScreenButton:" destination="16w-6F-G8o" eventType="touchUpInside" id="hjf-Lw-y3n"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="ubd-27-srx" firstAttribute="leading" secondItem="sjp-m3-9b0" secondAttribute="trailing" constant="21" id="2K9-GO-IwC"/>
                                     <constraint firstItem="sjp-m3-9b0" firstAttribute="leading" secondItem="nEQ-HI-vIC" secondAttribute="leading" constant="15" id="G8B-j8-HuQ"/>
                                     <constraint firstItem="1va-2V-nzu" firstAttribute="centerX" secondItem="nEQ-HI-vIC" secondAttribute="centerX" id="P6H-Rb-ky8"/>
+                                    <constraint firstItem="ubd-27-srx" firstAttribute="centerY" secondItem="sjp-m3-9b0" secondAttribute="centerY" id="W4N-25-KzD"/>
                                     <constraint firstItem="1va-2V-nzu" firstAttribute="centerY" secondItem="nEQ-HI-vIC" secondAttribute="centerY" multiplier="1.25" id="Zlw-9x-V7m"/>
-                                    <constraint firstAttribute="trailing" secondItem="sjp-m3-9b0" secondAttribute="trailing" constant="15" id="bIN-kI-PmJ"/>
                                     <constraint firstItem="sjp-m3-9b0" firstAttribute="top" secondItem="nEQ-HI-vIC" secondAttribute="top" constant="5" id="diV-nw-XFg"/>
-                                    <constraint firstAttribute="trailing" secondItem="ubd-27-srx" secondAttribute="trailing" constant="35" id="eQB-yM-5kG"/>
                                     <constraint firstAttribute="height" constant="70" id="r2j-Xa-6Aa"/>
-                                    <constraint firstItem="1va-2V-nzu" firstAttribute="centerY" secondItem="ubd-27-srx" secondAttribute="centerY" id="vsy-lR-2QW"/>
+                                    <constraint firstAttribute="trailing" secondItem="ubd-27-srx" secondAttribute="trailing" constant="24" id="rdC-vm-a9k"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHX-1x-z5R" userLabel="player View" customClass="PlayerView" customModule="VideoPlayApp" customModuleProvider="target">
@@ -256,22 +256,70 @@
                         <viewLayoutGuide key="safeArea" id="e0q-0K-PWi"/>
                     </view>
                     <navigationItem key="navigationItem" title=" " id="GzM-qx-9IH">
-                        <barButtonItem key="backBarButtonItem" title=" " id="BXa-av-KHd"/>
+                        <barButtonItem key="backBarButtonItem" title="  " id="BXa-av-KHd"/>
                     </navigationItem>
                     <connections>
                         <outlet property="playPauseButton" destination="1va-2V-nzu" id="g0l-9w-ZUM"/>
                         <outlet property="playerView" destination="VHX-1x-z5R" id="RW9-Oq-nTM"/>
-                        <outlet property="videoTimeSlider" destination="sjp-m3-9b0" id="OAg-mh-tzF"/>
+                        <outlet property="videoTimeSlider" destination="sjp-m3-9b0" id="ara-sf-I1o"/>
+                        <segue destination="4VC-ZV-Qet" kind="show" identifier="PlayVideoFullScreenViewController" id="fVQ-rV-cMQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LzU-Dz-YaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1165.5999999999999" y="8.8669950738916263"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Aec-yF-vRs">
+            <objects>
+                <viewController id="u8L-LW-E59" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="75e-6E-Yyo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uta-G6-Ve2">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V9n-eh-00Q" userLabel="upper view">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXf-3y-EL6" userLabel="under view">
+                                        <rect key="frame" x="0.0" y="367" width="375" height="367"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="V9n-eh-00Q" firstAttribute="top" secondItem="Uta-G6-Ve2" secondAttribute="top" id="EAP-UG-RQc"/>
+                                    <constraint firstAttribute="bottom" secondItem="hXf-3y-EL6" secondAttribute="bottom" id="FCb-n8-Gsn"/>
+                                    <constraint firstItem="hXf-3y-EL6" firstAttribute="height" secondItem="V9n-eh-00Q" secondAttribute="height" id="Z88-gi-DmR"/>
+                                    <constraint firstAttribute="trailing" secondItem="V9n-eh-00Q" secondAttribute="trailing" id="dLP-Ue-p9o"/>
+                                    <constraint firstItem="V9n-eh-00Q" firstAttribute="leading" secondItem="Uta-G6-Ve2" secondAttribute="leading" id="jp9-2K-SXg"/>
+                                    <constraint firstItem="hXf-3y-EL6" firstAttribute="leading" secondItem="Uta-G6-Ve2" secondAttribute="leading" id="jqF-Jc-X66"/>
+                                    <constraint firstItem="V9n-eh-00Q" firstAttribute="height" secondItem="Uta-G6-Ve2" secondAttribute="height" multiplier="0.5" id="lJx-0b-Tcd"/>
+                                    <constraint firstAttribute="trailing" secondItem="hXf-3y-EL6" secondAttribute="trailing" id="oFM-TJ-WdW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Uta-G6-Ve2" firstAttribute="top" secondItem="cee-A7-bIU" secondAttribute="top" id="NIP-gk-sSB"/>
+                            <constraint firstItem="Uta-G6-Ve2" firstAttribute="trailing" secondItem="cee-A7-bIU" secondAttribute="trailing" id="cme-Ho-tM3"/>
+                            <constraint firstItem="Uta-G6-Ve2" firstAttribute="bottom" secondItem="cee-A7-bIU" secondAttribute="bottom" id="wcI-5B-dGJ"/>
+                            <constraint firstItem="Uta-G6-Ve2" firstAttribute="leading" secondItem="cee-A7-bIU" secondAttribute="leading" id="y50-nh-Wv5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cee-A7-bIU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mj3-1y-90D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1165.5999999999999" y="694.58128078817742"/>
+        </scene>
         <!-- -->
         <scene sceneID="A4q-a5-7h1">
             <objects>
-                <viewController id="4VC-ZV-Qet" sceneMemberID="viewController">
+                <viewController id="4VC-ZV-Qet" customClass="PlayVideoFullScreenViewController" customModule="VideoPlayApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EcW-qJ-ElX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -283,32 +331,65 @@
                                         <rect key="frame" x="0.0" y="620" width="375" height="70"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vQu-7F-gsL">
-                                                <rect key="frame" x="13" y="5" width="349" height="11"/>
+                                                <rect key="frame" x="13" y="5" width="304" height="11"/>
                                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="T3c-we-B97"/>
                                                 </constraints>
                                                 <color key="thumbTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="sliderValueChanged:" destination="4VC-ZV-Qet" eventType="valueChanged" id="o3m-k0-Ctg"/>
+                                                </connections>
                                             </slider>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTz-fH-Rty" userLabel="Exit Full Screen Button">
+                                                <rect key="frame" x="336" y="2.6666666666666288" width="15" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="4dl-yc-Ueb"/>
+                                                    <constraint firstAttribute="width" secondItem="hTz-fH-Rty" secondAttribute="height" multiplier="1:1" id="uXb-K4-Hvd"/>
+                                                </constraints>
+                                                <state key="normal" image="icon_exit_full_screen"/>
+                                                <connections>
+                                                    <action selector="tapExitFullScreenButton:" destination="4VC-ZV-Qet" eventType="touchUpInside" id="KPu-Gd-cGP"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="hTz-fH-Rty" firstAttribute="leading" secondItem="vQu-7F-gsL" secondAttribute="trailing" constant="21" id="4vg-Wu-o99"/>
                                             <constraint firstAttribute="height" constant="70" id="Aqf-Nk-e14"/>
-                                            <constraint firstAttribute="trailing" secondItem="vQu-7F-gsL" secondAttribute="trailing" constant="15" id="KSz-zI-BOf"/>
+                                            <constraint firstItem="hTz-fH-Rty" firstAttribute="centerY" secondItem="vQu-7F-gsL" secondAttribute="centerY" id="NiQ-tK-RbM"/>
+                                            <constraint firstAttribute="trailing" secondItem="hTz-fH-Rty" secondAttribute="trailing" constant="24" id="g2F-eC-pAt"/>
                                             <constraint firstItem="vQu-7F-gsL" firstAttribute="leading" secondItem="u2x-oC-7gw" secondAttribute="leading" constant="15" id="rDe-we-mwo"/>
                                             <constraint firstItem="vQu-7F-gsL" firstAttribute="top" secondItem="u2x-oC-7gw" secondAttribute="top" constant="5" id="u4h-JS-ijM"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDq-nX-VIZ">
+                                        <rect key="frame" x="162.66666666666666" y="320" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FDq-nX-VIZ" secondAttribute="height" multiplier="1:1" id="PdA-Lh-tLU"/>
+                                            <constraint firstAttribute="height" constant="50" id="ugW-Gv-RT3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="icon_pause">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapPlayPauseButton:" destination="4VC-ZV-Qet" eventType="touchUpInside" id="NIy-eT-GV9"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="FDq-nX-VIZ" firstAttribute="centerX" secondItem="RpX-JF-u1w" secondAttribute="centerX" id="508-X4-9F9"/>
                                     <constraint firstItem="u2x-oC-7gw" firstAttribute="leading" secondItem="RpX-JF-u1w" secondAttribute="leading" id="6c7-M8-4XW"/>
                                     <constraint firstAttribute="bottom" secondItem="u2x-oC-7gw" secondAttribute="bottom" id="Rrs-Xn-cS8"/>
                                     <constraint firstAttribute="trailing" secondItem="u2x-oC-7gw" secondAttribute="trailing" id="iyp-b5-gXS"/>
+                                    <constraint firstItem="FDq-nX-VIZ" firstAttribute="centerY" secondItem="RpX-JF-u1w" secondAttribute="centerY" id="lhn-gL-HcJ"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RpX-JF-u1w" firstAttribute="trailing" secondItem="waF-MZ-APh" secondAttribute="trailing" id="F0s-GI-ycz"/>
                             <constraint firstItem="RpX-JF-u1w" firstAttribute="top" secondItem="waF-MZ-APh" secondAttribute="top" id="Myh-N8-KbO"/>
@@ -320,6 +401,11 @@
                     <navigationItem key="navigationItem" title=" " id="wyD-Xu-vPs">
                         <barButtonItem key="backBarButtonItem" title=" " id="iTG-WU-HeQ"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="playPauseButton" destination="FDq-nX-VIZ" id="Awl-16-xna"/>
+                        <outlet property="playerView" destination="RpX-JF-u1w" id="r5Y-xy-DHV"/>
+                        <outlet property="videoTimeSlider" destination="vQu-7F-gsL" id="Anq-As-McX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMg-rX-C5w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -345,7 +431,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_exit_full_screen" width="24" height="24"/>
         <image name="icon_full_screen" width="319" height="319.66665649414062"/>
+        <image name="icon_pause" width="48" height="48"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
     </resources>
 </document>
