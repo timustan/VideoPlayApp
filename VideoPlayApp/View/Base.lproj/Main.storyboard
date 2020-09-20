@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pj1-pJ-YsL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pj1-pJ-YsL">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -160,7 +160,7 @@
                         <outlet property="inputBarView" destination="6G0-e0-FkK" id="zFp-h6-f7E"/>
                         <outlet property="inputBarViewYCoordinate" destination="A00-kP-AMd" id="dEO-0j-wc1"/>
                         <outlet property="inputURLTextField" destination="OI3-1h-wxj" id="nbR-tM-VR3"/>
-                        <segue destination="16w-6F-G8o" kind="show" identifier="PlayVideoViewController" id="7bm-HU-dXG"/>
+                        <segue destination="u8L-LW-E59" kind="show" identifier="DoublePlayerViewController" id="KQL-bm-kSp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FRc-1d-lWC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -229,11 +229,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHX-1x-z5R" userLabel="player View" customClass="PlayerView" customModule="VideoPlayApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="90" width="375" height="601"/>
+                                <rect key="frame" x="0.0" y="46" width="375" height="645"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDv-Ge-yVn" userLabel="borderline view">
-                                <rect key="frame" x="0.0" y="88" width="375" height="2"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="2"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="ny4-SK-UNm"/>
@@ -269,23 +269,23 @@
             </objects>
             <point key="canvasLocation" x="1165.5999999999999" y="8.8669950738916263"/>
         </scene>
-        <!--View Controller-->
+        <!--Double Player View Controller-->
         <scene sceneID="Aec-yF-vRs">
             <objects>
-                <viewController id="u8L-LW-E59" sceneMemberID="viewController">
+                <viewController id="u8L-LW-E59" customClass="DoublePlayerViewController" customModule="VideoPlayApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="75e-6E-Yyo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uta-G6-Ve2">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V9n-eh-00Q" userLabel="upper view">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V9n-eh-00Q" userLabel="upper player view" customClass="PlayerView" customModule="VideoPlayApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="345"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXf-3y-EL6" userLabel="under view">
-                                        <rect key="frame" x="0.0" y="367" width="375" height="367"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXf-3y-EL6" userLabel="under player view" customClass="PlayerView" customModule="VideoPlayApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="345" width="375" height="345"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
@@ -311,6 +311,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cee-A7-bIU"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pVL-V4-Fe4"/>
+                    <connections>
+                        <outlet property="underPlayerView" destination="hXf-3y-EL6" id="Gra-rw-mkK"/>
+                        <outlet property="upperPlayerView" destination="V9n-eh-00Q" id="U4Y-Xi-NPK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mj3-1y-90D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -321,14 +326,14 @@
             <objects>
                 <viewController id="4VC-ZV-Qet" customClass="PlayVideoFullScreenViewController" customModule="VideoPlayApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EcW-qJ-ElX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RpX-JF-u1w" userLabel="Player View">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2x-oC-7gw">
-                                        <rect key="frame" x="0.0" y="620" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="654" width="375" height="70"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vQu-7F-gsL">
                                                 <rect key="frame" x="13" y="5" width="304" height="11"/>
@@ -364,7 +369,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDq-nX-VIZ">
-                                        <rect key="frame" x="162.66666666666666" y="320" width="50" height="50"/>
+                                        <rect key="frame" x="162.66666666666666" y="337" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="FDq-nX-VIZ" secondAttribute="height" multiplier="1:1" id="PdA-Lh-tLU"/>
                                             <constraint firstAttribute="height" constant="50" id="ugW-Gv-RT3"/>
@@ -434,6 +439,6 @@
         <image name="icon_exit_full_screen" width="24" height="24"/>
         <image name="icon_full_screen" width="319" height="319.66665649414062"/>
         <image name="icon_pause" width="48" height="48"/>
-        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="play.fill" catalog="system" width="58" height="64"/>
     </resources>
 </document>

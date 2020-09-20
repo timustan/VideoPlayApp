@@ -22,7 +22,7 @@ class SelectVideoViewController: UIViewController, UITextFieldDelegate, UIImageP
     @IBOutlet var inputBarViewYCoordinate: NSLayoutConstraint!
     
     // 動画再生画面遷移用identifier
-    let identifier = "PlayVideoViewController"
+    let identifier = "DoublePlayerViewController"
     // UIImagePickerController
     let imagePickerController = UIImagePickerController()
     // log
